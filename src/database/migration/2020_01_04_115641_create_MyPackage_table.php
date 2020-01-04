@@ -15,9 +15,6 @@ class Create:uc:packageTable extends Migration
         Schema::create(':uc:package', function (Blueprint $table) {
             $table->increments('id');
             
-            //$table->string('type', 20)->nullable();
-            //$table->integer('page_id')->unsigned()->nullable();
-            
             $table->timestamps();
             $table->softDeletes();
         });
