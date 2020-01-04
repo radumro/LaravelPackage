@@ -1,15 +1,11 @@
 name: ArchiveRepository
-
 on: [push]
-
 jobs:
   build:
-
     runs-on: ubuntu-latest
-
     steps:
-    - uses: actions/checkout@v1
-    - name: Run a one-line script
-      run:  zip -r LaravelPackge.zip
-    - name: Run a multi-line script
-      run: echo "Finish"
+    - name: Zip Release
+      uses: TheDoctor0/zip-release@v0.2.1
+      with:
+        filename: 'LaravelPackage.zip'
+        exclusions: '*.git* /*node_modules/* .editorconfig'
