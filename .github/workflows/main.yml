@@ -4,8 +4,9 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    - name: Zip Release
-      uses: TheDoctor0/zip-release@v0.2.1
+    - uses: actions/checkout@master
+    - name: Archive Release
+      uses: thedoctor0/zip-release@master
       with:
-        filename: 'LaravelPackage.zip'
+        filename: 'release.zip'
         exclusions: '*.git* /*node_modules/* .editorconfig'
